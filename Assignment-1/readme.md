@@ -255,44 +255,39 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 1. **1 min 30 secs and 250 MB of memory.**
 2. Longest Token: `Ġresponsibility`
 
-| Index | Token            | Length |
+| Index | Token | Length |
 |-------|------------------|--------|
-| 0     | `<|endoftext|>`  | 13     |
-| 1     | `Ġunexpected`    | 11     |
-| 2     | `Ġremembered`    | 11     |
-| 3     | `Ġaccidentally`  | 13     |
-| 4     | `Ġeverywhere`    | 11     |
-| 5     | `Ġeverything`    | 11     |
-| 6     | `Ġunderstand`    | 11     |
-| 7     | `Ġadventures`    | 11     |
-| 8     | `Ġespecially`    | 11     |
-| 9     | `Ġinteresting`   | 12     |
-| 10    | `Ġvegetables`    | 11     |
-| 11    | `Ġembarrassed`   | 12     | 
-| 12    | `Ġunderstood`    | 11     |
-| 13    | `Ġcaterpillar`   | 12     |
-| 14    | `Ġmysterious`    | 11     |
-| 15    | `Ġcomfortable`   | 12     | 
-| 16    | `Ġfrustrated`    | 12     | 
-| 17    | `Ġincredible`    | 11     | 
-| 18    | `Ġfrightened`    | 12     | 
-| 19    | `Ġadventurous`   | 13     | 
-| 20    | `comfortable`    | 11     | 
-| 21    | `Ġuncomfortable` | 14     | 
-| 22    | `Ġdisappeared`   | 13     | 
-| 23    | `Ġsuccessful`    | 11     | 
-| 24    | `Ġindependent`   | 12     | 
+| 0 | `<|endoftext|>` | 13 |
+| 1 | `Ġunexpected` | 11 |
+| 2 | `Ġremembered` | 11 |
+| 3 | `Ġaccidentally` | 13 |
+| 4 | `Ġeverywhere` | 11 |
+| 5 | `Ġeverything` | 11 |
+| 6 | `Ġunderstand` | 11 |
+| 7 | `Ġadventures` | 11 |
+| 8 | `Ġespecially` | 11 |
+| 9 | `Ġinteresting` | 12 |
+| 10 | `Ġvegetables` | 11 |
+| 11 | `Ġembarrassed` | 12 |
+| 12 | `Ġunderstood` | 11 |
+| 13 | `Ġcaterpillar` | 12 |
+| 14 | `Ġmysterious` | 11 |
+| 15 | `Ġcomfortable` | 12 |
+| 16 | `Ġfrustrated` | 12 |
+| 17 | `Ġincredible` | 11 |
+| 18 | `Ġfrightened` | 12 |
+| 19 | `Ġadventurous` | 13 |
+| 20 | `comfortable` | 11 |
+| 21 | `Ġuncomfortable` | 14 |
+| 22 | `Ġdisappeared` | 13 |
+| 23 | `Ġsuccessful` | 11 |
+| 24 | `Ġindependent` | 12 |
 
 ### Q. Profile your code. What part of the tokenizer training process takes the most time?
 Roughly 67% of the total runtime was spent in the pre-tokenization chunk processor, making it the most time-consuming step.
 
 Memory usage: ▁▁▁▁▁▁▂▂▂▂▂▄▇█▇▄█▇▄█▇████▄█ (max: 245.668 MB, growth rate: 100%)
 
-│  Time% │ CPU%  │ Line │ Hits  │ Mem%  │ Mem   │ Visual        │ Line# │ Function
---------|-------|------|-------|-------|-------|---------------|-------|---------------------------------------
-│    9% │   19% │  67% │       │  99%  │ 175M  │ █████████ 97% │    82 │ ForkProcess.pretokenize_chunk_worker
-│       │       │      │       │  98%  │  10M  │ ▂▂            │       │ get_stats
-│       │       │      │       │       │       │               │       │ merge_vocab
 
 ### BPE Training on OpenWebText
 Q. What is the longest token in the vocabulary? Does it make sense?
