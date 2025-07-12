@@ -257,7 +257,7 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 
 | Index | Token | Length |
 |-------|------------------|--------|
-| 0 | `<|endoftext|>` | 13 |
+| 0     |      `EOT`       | 13     |
 | 1 | `Ġunexpected` | 11 |
 | 2 | `Ġremembered` | 11 |
 | 3 | `Ġaccidentally` | 13 |
