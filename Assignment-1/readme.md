@@ -255,9 +255,9 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 1. **1 min 30 secs and 250 MB of memory.**
 2. Longest Token: `Ġresponsibility`
 
-| Index | Token           | Length |
+| Index | Token            | Length |
 |-------|------------------|--------|
-| 0     | <|endoftext|>    | 13     |
+| 0     | `<|endoftext|>`  | 13     |
 | 1     | `Ġunexpected`    | 11     |
 | 2     | `Ġremembered`    | 11     |
 | 3     | `Ġaccidentally`  | 13     |
@@ -287,11 +287,12 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 Roughly 67% of the total runtime was spent in the pre-tokenization chunk processor, making it the most time-consuming step.
 
 Memory usage: ▁▁▁▁▁▁▂▂▂▂▂▄▇█▇▄█▇▄█▇████▄█ (max: 245.668 MB, growth rate: 100%)
---------|-------|------|-------|-------|-------|---------------|-------|------------------------------------------------------------------------------------
-│       │       │      │       │       │       │               │       │function summary for /storage/users/visionintelligence/Abhishek/train_tinystories.py
-│    9% │   19% │  67% │       │  99%  │  175M │█████████  97% │    82 │ForkProcess.pretokenize_chunk_worker
-│       │       │      │       │  98%  │   10M │▂▂            │       │get_stats
-│       │       │      │       │       │       │                │       │merge_vocab
+
+│  Time% │ CPU%  │ Line │ Hits  │ Mem%  │ Mem   │ Visual        │ Line# │ Function
+--------|-------|------|-------|-------|-------|---------------|-------|---------------------------------------
+│    9% │   19% │  67% │       │  99%  │ 175M  │ █████████ 97% │    82 │ ForkProcess.pretokenize_chunk_worker
+│       │       │      │       │  98%  │  10M  │ ▂▂            │       │ get_stats
+│       │       │      │       │       │       │               │       │ merge_vocab
 
 ### BPE Training on OpenWebText
 Q. What is the longest token in the vocabulary? Does it make sense?
