@@ -257,7 +257,7 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 
 | Index | Token           | Length |
 |-------|------------------|--------|
-| 0     | `<|endoftext|>` | 13     |
+| 0     | <|endoftext|>    | 13     |
 | 1     | `Ġunexpected`    | 11     |
 | 2     | `Ġremembered`    | 11     |
 | 3     | `Ġaccidentally`  | 13     |
@@ -285,12 +285,13 @@ This summary highlights key bottlenecks and memory usage from profiling the opti
 
 ### Q. Profile your code. What part of the tokenizer training process takes the most time?
 Roughly 67% of the total runtime was spent in the pre-tokenization chunk processor, making it the most time-consuming step.
-Memory usage: ▁▁▁▁▁▁▂▂▂▂▂▄▇█▇▄█▇▄█▇████▄█ (max: 245.668 MB, growth rate: 100%)
 
+Memory usage: ▁▁▁▁▁▁▂▂▂▂▂▄▇█▇▄█▇▄█▇████▄█ (max: 245.668 MB, growth rate: 100%)
+--------|-------|------|-------|-------|-------|---------------|-------|------------------------------------------------------------------------------------
 │       │       │      │       │       │       │               │       │function summary for /storage/users/visionintelligence/Abhishek/train_tinystories.py
 │    9% │   19% │  67% │       │  99%  │  175M │█████████  97% │    82 │ForkProcess.pretokenize_chunk_worker
 │       │       │      │       │  98%  │   10M │▂▂            │       │get_stats
-│       │       │      │       │       │       │               │       │merge_vocab
+│       │       │      │       │       │       │                │       │merge_vocab
 
 ### BPE Training on OpenWebText
 Q. What is the longest token in the vocabulary? Does it make sense?
