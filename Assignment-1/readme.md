@@ -514,17 +514,17 @@ for segment_str in initial_segments_str:
 
 ### Q. Sample 10 documents from TinyStories and OpenWebText. Using your previously-trained TinyStories and OpenWebText tokenizers (10K and 32K vocabulary size, respectively), encode these sampled documents into integer IDs. What is each tokenizer’s compression ratio (bytes/token)?
 **Compresion Ratio on TinyStories Tokenizer:**
-- Compression Ratio for our tokenizer: 4.176 bytes/token
-- Compression Ratio for GPT-2 tokenizer: 4.081 bytes/token
+- Compression Ratio for our tokenizer: `4.176 bytes/token`
+- Compression Ratio for GPT-2 tokenizer: `4.081 bytes/token`
 
 **Compression Ratio on OpenWebText Tokenizer:**
-- Compression Ratio for our tokenizer: 4.583 bytes/token
-- Compression Ratio for GPT-2 tokenizer: 4.618 bytes/token
+- Compression Ratio for our tokenizer: `4.583 bytes/token`
+- Compression Ratio for GPT-2 tokenizer: `4.618 bytes/token`
 
 ### Q. What happens if you tokenize your OpenWebText sample with the TinyStories tokenizer? Compare the compression ratio and/or qualitatively describe what happens.
 **Compression Ratio on OpenWebText using Tinystories Tokenizer:**
-- Compression Ratio for our tokenizer: 3.324 bytes/token
-- Compression Ratio for GPT-2 tokenizer: 4.653 bytes/token
+- Compression Ratio for our tokenizer: `3.324 bytes/token`
+- Compression Ratio for GPT-2 tokenizer: `4.653 bytes/token`
 
 ### Q. Estimate the throughput of your tokenizer (e.g., in bytes/second). How long would it take to tokenize the Pile dataset (825GB of text)?
 
@@ -537,8 +537,8 @@ for segment_str in initial_segments_str:
 
 ### Analysis:
 - GPT-2 tokenizer is significantly faster than both custom-trained tokenizers across both datasets.
-- When used on TinyStories, GPT-2 achieves a throughput of ~12.6M bytes/sec, vs ~180K bytes/sec from the custom TinyStories tokenizer — making it ~70× faster.
-- On OpenWebText, GPT-2 is still over 137× faster than the custom OpenWebText tokenizer.
+- When used on TinyStories, GPT-2 achieves a throughput of **~12.6M bytes/sec**, vs **~180K bytes/sec** from the custom TinyStories tokenizer — making it `~70× faster`.
+- On OpenWebText, GPT-2 is still over `137× faster` than the custom OpenWebText tokenizer.
 - This performance gap is primarily due to:
 	- Highly optimized C++ backend in GPT-2’s tokenizer (via tiktoken).
 	- Efficient merge logic and precompiled data structures.
