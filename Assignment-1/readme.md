@@ -288,6 +288,11 @@ Roughly 67% of the total runtime was spent in the pre-tokenization chunk process
 
 Memory usage: ▁▁▁▁▁▁▂▂▂▂▂▄▇█▇▄█▇▄█▇████▄█ (max: 245.668 MB, growth rate: 100%)
 
+| CPU % | Mem % | Time % | I/O % | CPU Load % | Mem Used | Memory Bar        | Line # | Function                                |
+|-------|-------|--------|-------|------------|----------|--------------------|--------|-----------------------------------------|
+| 9%    | 19%   | 67%    |       | 99%        | 175M     | █████████ 97%      | 82     | ForkProcess.pretokenize_chunk_worker    |
+|       |       |        |       | 98%        | 10M      | ▂▂                 |        | get_stats                                |
+|       |       |        |       |            |          |                    |        | merge_vocab                              |
 
 ### BPE Training on OpenWebText
 Q. What is the longest token in the vocabulary? Does it make sense?
